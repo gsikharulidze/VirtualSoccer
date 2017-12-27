@@ -9,9 +9,9 @@ using VS.Core;
 
 namespace VS.Data
 {
-    public class Storage 
+    public class Storage : TeamsStore
     {
-        public string conncetionstring = @"MyData.db";
+        public string conncetionstring = @"Data.db";
 
 
         public Team Create(Team team)
@@ -19,11 +19,12 @@ namespace VS.Data
             using (var db = new LiteDatabase(conncetionstring))
             {
                 var teams = db.GetCollection<Team>("teams");
-                var newtask = new Team
+                var newteam = new Team
                 {
-                    Name = teams.Name,
-                    Star = 5.0D,
-                    Form = 5.0D
+                    Name = team.Name,
+                    Star = team.Star,
+                    Form = team.Form,
+                    IsCountry = team.IsCountry
                 };
 
                 teams.Insert(team);

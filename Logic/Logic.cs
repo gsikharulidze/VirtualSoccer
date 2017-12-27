@@ -7,10 +7,10 @@ namespace VS.Logic
     {
         public readonly TeamsStore storage;
 
-        //public VSLogic(TeamsStore storage)
-        //{
-        //    this.storage = storage;
-        //}
+        public Logic(TeamsStore storage)
+        {
+            this.storage = storage;
+        }
         public IEnumerable<Team> List()
         {
             return storage.List();

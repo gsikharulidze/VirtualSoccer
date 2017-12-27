@@ -7,6 +7,7 @@ namespace VS.Core
         public string Name { get; set; }
         public double Star { get; set; }
         public double Form { get; set; }
+        public bool IsCountry { get; set; }
 
         public override string ToString()
         {
